@@ -1,7 +1,10 @@
+// src/App.jsx
 import { useState } from "react";
 import AddImageForm from "./components/addImageForm/AddImageForm";
 import DisplayQuote from "./components/displayQuote/DisplayQuote";
 import EditQuote from "./components/editQuote/EditQuote";
+import RandomQuote from "./components/randomWomanQuote/RandomQuote";
+
 import "./App.css";
 
 function App() {
@@ -50,8 +53,14 @@ function App() {
   return (
     <main>
       <h1>Women Phrases</h1>
+
+      {/* Mostrar una frase aleatoria de mujer famosa */}
+      <RandomQuote />
+
+      {/* Formulario para añadir frases nuevas */}
       <AddImageForm onAdd={addCard} />
 
+      {/* Mostrar todas las frases */}
       {cards.map((card) =>
         card.isEditing ? (
           <EditQuote
